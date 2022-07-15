@@ -12,10 +12,11 @@ const initialState = {
   cart: false,
   userProfile: false,
   notification: false,
-}
+};
 
 // La propiedad children nos ayuda a pasar contenido, elementos, componentes 
 // <App> Contenido <h1> Children </h1> <Componente 1 /> </App>
+// You always return children because wherever wrapper the content will be display  
 export const ContextProvider = ({children}) => {
   const [activeMenu, setActiveMenu] = useState(true);
   
@@ -28,11 +29,10 @@ export const ContextProvider = ({children}) => {
         setActiveMenu,
       }}
     >
-      {/* You always return children because wherever wrapper the content will be display  */}
       {children}
     </StateContext.Provider>
-  )
-}
+  );
+};
 
 // give me the data from the context using the context and we spcefiy which one 
-export const useStateContext = () => useContext(StateContext)
+export const useStateContext = () => useContext(StateContext);
